@@ -18,7 +18,7 @@ public class random1 extends Applet {
         g.drawRoundRect(5,200, 80,80,50,50);
 
         /*
-            Color "Name of the Color" = new Color(255, 255, 255, 0);
+            Color [Name of the Color] = new Color(255, 255, 255, 0);
             RGBA ^^^
 
             super.paint(g);
