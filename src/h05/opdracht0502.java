@@ -2,7 +2,6 @@ package h05;
 
 import java.applet.Applet;
 import java.awt.*;
-import java.awt.event.*;
 
 public class opdracht0502 extends Applet {
     int ValerieWeight = 40;
@@ -15,6 +14,7 @@ public class opdracht0502 extends Applet {
     int BoxHeight = GraphHeight + 35;
     int InfoHeight = GraphHeight + 80;
 
+    String text;
 
     public void init() {
         setSize(600,400);
@@ -70,5 +70,17 @@ public class opdracht0502 extends Applet {
         //info
         g.setColor(Color.black);
         g.drawString("Weight in KG",30,InfoHeight);
+
+        if (ValerieWeight > JeroenWeight && ValerieWeight > HansWeight){
+            text = "Valerie is the heaviest";
+        }
+        else if (JeroenWeight > ValerieWeight && JeroenWeight > HansWeight) {
+            text = "Jeroen is the heaviest";
+        }
+        else if (HansWeight > ValerieWeight && HansWeight > JeroenWeight) {
+            text = "Hans is the heaviest";
+        }
+
+        g.drawString(text, 30,InfoHeight+15);
     }
 }

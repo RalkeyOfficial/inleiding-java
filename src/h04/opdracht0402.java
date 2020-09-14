@@ -10,7 +10,7 @@ public class opdracht0402 extends Applet {
 
     public void paint(Graphics g) {
         //MATRIX EFFECT
-        Color green = new Color(0, 255, 0, 30);
+        Color green = new Color(0, 255, 0, 80);
         g.setColor(green);
         g.setFont(new Font("times", Font.PLAIN, 30));
         g.drawString("0110101001010101010101010",0,0);
@@ -26,10 +26,24 @@ public class opdracht0402 extends Applet {
         g.drawString("0110101001010101010101010",0,300);
 
         //main house shape
+        g.setColor(Color.black);
+        g.fillRect(20,140,140,140);
         g.setColor(Color.green);
         g.drawRect(20,140,140,140);
-        g.drawLine(95,20,20,140);
-        g.drawLine(95,20,160,140);
+
+        int[] x = new int[3];
+        int[] y = new int[3];
+        int n;
+        x[0]=95; x[1]=160; x[2]=20;
+        y[0]=20; y[1]=140; y[2]=140;
+        n = 3;
+
+        Polygon p = new Polygon(x, y, n);
+
+        g.setColor(Color.black);
+        g.fillPolygon(p);
+        g.setColor(Color.green);
+        g.drawPolygon(p);
 
         //door
         g.drawRect(100,220,40,60);
