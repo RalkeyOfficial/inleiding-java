@@ -4,11 +4,11 @@ import java.applet.Applet;
 import java.awt.*;
 
 public class opdracht0502 extends Applet {
-    int ValerieWeight = 40;
+    int ValerieWeight = 20;
     int JeroenWeight = 100;
-    int HansWeight = 80;
+    int HansWeight = 130;
 
-    int GraphHeight = 140;
+    int GraphHeight = 160;
 
     int NameHeight = GraphHeight + 50;
     int BoxHeight = GraphHeight + 35;
@@ -17,7 +17,7 @@ public class opdracht0502 extends Applet {
     String text;
 
     public void init() {
-        setSize(600,400);
+        setSize(500,400);
     }
 
     public void paint(Graphics g) {
@@ -52,6 +52,9 @@ public class opdracht0502 extends Applet {
         g.drawString("120", 370, 135);
         g.drawLine(15,130,355,130);
 
+        g.drawString("140", 370, 155);
+        g.drawLine(15,150,355,150);
+
         //people
         g.drawString("Valerie", 50, NameHeight);
         g.setColor(Color.red);
@@ -81,6 +84,6 @@ public class opdracht0502 extends Applet {
             text = "Hans is the heaviest";
         }
 
-        g.drawString(text, 30,InfoHeight+15);
+        g.drawString(text, 30,InfoHeight+20);
     }
 }

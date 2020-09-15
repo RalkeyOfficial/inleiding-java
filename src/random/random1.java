@@ -16,7 +16,7 @@ public class random1 extends Applet {
         g.drawOval(2,40,50,50);
         g.drawArc(5,100,80,80,90,240);
         g.drawRoundRect(5,200, 80,80,50,50);
-
+        
         /*
             Color [Name of the Color] = new Color(255, 255, 255, 0);
             RGBA ^^^

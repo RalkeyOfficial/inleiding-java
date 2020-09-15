@@ -10,7 +10,7 @@ public class opdracht0402 extends Applet {
 
     public void paint(Graphics g) {
         //MATRIX EFFECT
-        Color green = new Color(0, 255, 0, 80);
+        Color green = new Color(0, 255, 0, 50);
         g.setColor(green);
         g.setFont(new Font("times", Font.PLAIN, 30));
         g.drawString("0110101001010101010101010",0,0);
