@@ -2,6 +2,7 @@ package random;
 
 import java.applet.Applet;
 import java.awt.*;
+import java.text.DecimalFormat;
 
 public class random1 extends Applet {
     public void init() {
@@ -25,6 +26,15 @@ public class random1 extends Applet {
             Graphics2D g2 = (Graphics2D) g;
             g2.setStroke(new BasicStroke(3));
             lijn dikte ^^^
+
+            g.setFont(new Font("times", Font.PLAIN, 30));
+
+            DecimalFormat df = new DecimalFormat();
+            g.drawString(df.format(doubleNumber));
+            control de hoeveelheid aan nummers na de .
+
+            double = Double.parseDouble(String);
+            verandert String naar double
          */
     }
 }
