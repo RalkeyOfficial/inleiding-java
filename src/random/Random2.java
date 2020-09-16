@@ -19,8 +19,7 @@ public class Random2 extends Applet {
 
         stupidfy = new Button("Stupidfy");
 
-        buttonchecker kn = new buttonchecker();
-        stupidfy.addActionListener(kn);
+        stupidfy.addActionListener(new buttonchecker());
 
         add(stupidfy);
     }

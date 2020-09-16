@@ -12,6 +12,7 @@ public class Random4 extends Applet {
     public void init() {
         tekstvak = new TextField("", 30);
         knop = new Button("OK");
+        tekstvak.addActionListener(new knoplistener());
         knop.addActionListener(new knoplistener());
         add(tekstvak);
         add(knop);

@@ -18,6 +18,7 @@ public class Opdracht0801 extends Applet {
         ok = new Button("Go!");
         reset = new Button("Reset");
 
+        tekst.addActionListener(new okKnopListener());
         ok.addActionListener(new okKnopListener());
         reset.addActionListener(new resetKnopListener());
 

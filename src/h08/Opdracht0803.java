@@ -16,7 +16,7 @@ public class Opdracht0803 extends Applet {
     Button knop;
 
     public void init() {
-        label = new Label("voeg de prijs zonder BTW toe");
+        label = new Label("Voeg de prijs exclusief BTW toe");
         tekstvak = new TextField("", 20);
         knop = new Button("Ok");
 
