@@ -8,82 +8,68 @@ import java.awt.event.ActionListener;
 public class Opdracht1005 extends Applet {
     TextField tekstvak;
     Label label;
-    String preammcijfer;
-    double numcijfer;
-    int ammcijfer = 3;
-    double cijfer[] = new double[ammcijfer];
-
-    int timer = 0;
-    int timer2 = 1;
-
-    double eindcijfer;
+    Button reset;
+    String error;
+    int aantal;
+    double totaal;
+    double gemiddelde;
 
     public void init() {
-        tekstvak = new TextField("", 5);
-        label = new Label("voer in hoeveel cijfers u hebt: ");
+        aantal = 0;
+        totaal = 0;
+        gemiddelde = 0;
+
+        setSize(260,250);
+        tekstvak = new TextField("",5);
+        label = new Label("voer uw cijfers in:");
+        reset = new Button("reset");
 
         tekstvak.addActionListener(new textListener());
+        reset.addActionListener(new resetListener());
 
         add(label);
         add(tekstvak);
+        add(reset);
     }
 
     public void paint(Graphics g) {
-        g.drawString("uw eind cijfer is: " + eindcijfer, 20, 40);
+        g.drawString("uw gemiddelde cijfer is: " + gemiddelde, 20, 50);
+        g.drawString(error,20,70);
     }
 
     class textListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
+            try {
+                aantal++;
+                totaal += Double.parseDouble(tekstvak.getText());
+                gemiddelde = totaal / aantal;
 
-            for (int a = 0; a < ammcijfer; a++){
+                System.out.println("aantal is: " + aantal);
+                System.out.println("totaal is: " + totaal);
+                System.out.println("gemiddelde is: " + gemiddelde);
 
-                try {
-                    if (timer < 1) {
-                        preammcijfer = tekstvak.getText();
-                        ammcijfer = Integer.parseInt(preammcijfer);
-
-                        label = new Label("voer cijfer nummer " + timer2 + " in: ");
-                        repaint();
-
-                        timer++;
-                        timer2++;
-                    } else {
-                        tekstvak.addActionListener(new textListener());
-
-                        preammcijfer = tekstvak.getText();
-                        numcijfer = Double.parseDouble(preammcijfer);
-
-                        System.out.println("tot hier werkt ie");
-                        cijfer[a-1] = numcijfer;
-
-                        
-                        label = new Label("voer cijfer nummer " + timer2 + " in: ");
-                        repaint();
-
-                        timer2++;
-
-                        if (a == ammcijfer) {
-                            for (int o = 0; o < ammcijfer; o++) {
-                                eindcijfer =+ cijfer[o];
-
-                                if (o == ammcijfer) {
-                                    eindcijfer /= ammcijfer;
-                                    repaint();
-                                }
-
-                            }
-
-                        }
-
-                    }
-
-                }
-                catch (NumberFormatException i) {
-                    System.out.println("ERROR!");
-                }
+                tekstvak.setText("");
+                error = "";
             }
+            catch (NumberFormatException i) {
+                error = "hey hey hey. dat is geen nummer";
+                tekstvak.setText("");
+            }
+            repaint();
 
         }
     }
+
+    class resetListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            aantal = 0;
+            totaal = 0;
+            gemiddelde = 0;
+            tekstvak.setText("");
+            error = "";
+            repaint();
+        }
+    }
+
 }

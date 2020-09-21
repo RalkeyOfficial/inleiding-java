@@ -6,17 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PraktijkOpdracht08 extends Applet {
-    TextField numb1;
-    TextField numb2;
-    String tel1;
-    String tel2;
-    double val1;
-    double val2;
-    double eindnumb;
-    Button plus;
-    Button minus;
-    Button times;
-    Button slash;
+    TextField numb1, numb2;
+    String tel1, tel2;
+    double val1, val2, eindnumb;
+    Button plus, minus, times, slash;
 
     public void init() {
         setSize(400,100);
