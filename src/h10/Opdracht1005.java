@@ -19,7 +19,7 @@ public class Opdracht1005 extends Applet {
         totaal = 0;
         gemiddelde = 0;
 
-        setSize(260,250);
+        setSize(260,150);
         tekstvak = new TextField("",5);
         label = new Label("voer uw cijfers in:");
         reset = new Button("reset");
