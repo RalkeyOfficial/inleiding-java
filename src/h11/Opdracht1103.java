@@ -2,7 +2,6 @@ package h11;
 
 import java.applet.Applet;
 import java.awt.*;
-import java.awt.event.InputMethodListener;
 
 public class Opdracht1103 extends Applet {
     int teller = 0;
