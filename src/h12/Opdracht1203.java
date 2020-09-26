@@ -32,11 +32,11 @@ public class Opdracht1203 extends Applet {
     }
 
     public void paint(Graphics g) {
-        g.drawString("" + array[0], 30, 50);
-        g.drawString("" + array[1], 30, 70);
-        g.drawString("" + array[2], 30, 90);
-        g.drawString("" + array[3], 30, 110);
-        g.drawString("" + array[4], 30, 130);
+        g.drawString(array[0], 30, 50);
+        g.drawString(array[1], 30, 70);
+        g.drawString(array[2], 30, 90);
+        g.drawString(array[3], 30, 110);
+        g.drawString(array[4], 30, 130);
 
     }
 

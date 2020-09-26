@@ -8,7 +8,7 @@ public class Opdracht1201 extends Applet {
     int x;
     double p;
     double getalen[] = {3.4, 5.6, 8, 7.8, 6.9, 5.3, 8.2, 4.6, 7.3, 6};
-    DecimalFormat df = new DecimalFormat("#.00");
+    DecimalFormat df = new DecimalFormat("#.0");
 
     public void init() {
         x = 10;
