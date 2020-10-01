@@ -13,12 +13,12 @@ public class Opdracht1103 extends Applet {
     int x = 0;
 
     public void init() {
-        setSize(1400,200);
+        setSize(1000,200);
     }
 
     public void paint(Graphics g) {
 
-        while (teller < 50) {
+        while (teller < 21) {
 
             x += 35;
 

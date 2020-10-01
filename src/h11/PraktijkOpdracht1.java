@@ -1,52 +1,45 @@
 package h11;
 
-import java.applet.Applet;
 import java.awt.*;
+import java.applet.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PraktijkOpdracht1 extends Applet {
-    TextField tekstvak;
-    int teller;
-    int teller2 = 0;
-    int awn[] = new int[10];
-    int multi;
-    int x;
 
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
-    //                                                      \\
-    // massive failure. rekenen is niet mijn sterkste punt  \\
-    //                                                      \\
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
+public class PraktijkOpdracht1 extends Applet {
+    TextField tekstvak1;
+    Label label;
+    Button knop;
+    int cijfer, teller;
+    int y = 10;
 
     public void init() {
-        tekstvak = new TextField("", 3);
+        setSize(200, 300);
 
-        tekstvak.addActionListener(new textListener());
+        label = new Label("vul een getal in:");
+        tekstvak1 = new TextField("", 10);
+        knop = new Button("OK");
 
-        add(tekstvak);
+        knop.addActionListener(new KnopListener());
+        tekstvak1.addActionListener(new KnopListener());
+
+        add(label);
+        add(tekstvak1);
+        add(knop);
     }
 
     public void paint(Graphics g) {
-        multi = 0;
-        for (x = 5; x < 55; x += 10) {
-            g.drawString(teller + " x " + multi + " = " + awn[teller2], 5, x);
-            teller2++;
+        for(teller = 1; teller <= 10; teller++) {
+            y += 20;
+            g.drawString("" +teller*cijfer, 10, y);
         }
+        y = 10;
     }
 
-    class textListener implements ActionListener {
+    class KnopListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
-            teller = Integer.parseInt(tekstvak.getText());
-
-            for (int i = 0; i < 10; i++){
-                awn[i] = teller * multi;
-                multi++;
-            }
-
-            x = 5;
-
+            cijfer = Integer.parseInt(tekstvak1.getText());
+            repaint();
         }
     }
 }

@@ -35,6 +35,11 @@ public class random1 extends Applet {
 
             double = Double.parseDouble(String);
             verandert String naar double
+
+            r = Math.random();
+            worp = (int)(r * 6 + 1);
+            //RandomGetal * MaximumGetal + MinimumGetal
+            ^^^ random getal met max en min ^^^
          */
     }
 }
