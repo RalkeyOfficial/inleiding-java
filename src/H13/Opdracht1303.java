@@ -9,7 +9,7 @@ public class Opdracht1303 extends Applet {
     Button brick, betton, clear;
 
     public void init() {
-        setSize(550, 900);
+        setSize(1000, 900);
 
         brick = new Button("Brick");
         betton = new Button("betton");
@@ -30,20 +30,20 @@ public class Opdracht1303 extends Applet {
 
     class buttonListenerBrick implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-//            tekenBrickMuur(g, 10, 110, 400, 400);
+            tekenBrickMuur(getGraphics(), 50, 100, 400, 400);
         }
     }
 
     class buttonListenerBetton implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-//            tekenbetonMuur(g, 500, 110, 400, 400);
+            tekenbetonMuur(getGraphics(), 550, 100, 400, 400);
         }
     }
 
     class buttonListenerClear implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-//            g.setColor(Color.white);
-//            g.fillRect(0,0,1000,1000);
+            getGraphics().setColor(Color.white);
+            getGraphics().fillRect(0,100,1000,700);
         }
     }
 
@@ -57,39 +57,52 @@ public class Opdracht1303 extends Applet {
         g2.setStroke(new BasicStroke(3));
 
         g.setColor(Color.white);
-        for (int y = y1 + 20; y <= height + 20; y += 20) {
+
+        //for loop horizontal lines
+        for (int y = y1 + 20; y <= height + 80; y += 20) {
             g.drawLine(x1, y, x1 + width, y);
         }
 
+        //start of vertical lines
+        //int initializer
         int x;
-        int idkAnymore = 0;
-        int idkAnymore1 = 20;
+        int vert1 = 0;
+        int vert2 = 20;
 
-        for (int i = y1; i < height; i += 40) {
-            for (x = x1; x <= width; x += 60) {
+        //whole for loop
+        for (int i = y1; i < height + 80; i += 40) {
 
-                g.drawLine(x, y1 + idkAnymore, x, y1 + idkAnymore1);
+            //for loop row 1
+            for (x = x1; x <= width + 60; x += 60) {
 
-            }
-            idkAnymore += 20;
-            idkAnymore1 += 20;
-
-            for (x = x1 + 30; x <= width; x += 60) {
-
-                g.drawLine(x, y1 + idkAnymore, x, y1 + idkAnymore1);
+                g.drawLine(x, y1 + vert1, x, y1 + vert2);
 
             }
-            idkAnymore += 20;
-            idkAnymore1 += 20;
+
+            //Y goes down
+            vert1 += 20;
+            vert2 += 20;
+
+            //for loop row 2
+            for (x = x1 + 30; x <= width + 60; x += 60) {
+
+                g.drawLine(x, y1 + vert1, x, y1 + vert2);
+
+            }
+
+            //Y goes down
+            vert1 += 20;
+            vert2 += 20;
         }
         g2.setStroke(new BasicStroke(1));
 
         g.setColor(Color.black);
         g.drawRect(x1, y1, width, height);
+        g.setColor(Color.white);
 
     }
     void tekenbetonMuur(Graphics g, int x1, int y1, int width, int height) {
-        g.setColor(Color.darkGray);
+        g.setColor(Color.gray);
         g.fillRect(x1, y1, width, height);
 
         super.paint(g);
@@ -97,16 +110,16 @@ public class Opdracht1303 extends Applet {
         g2.setStroke(new BasicStroke(1));
 
         g.setColor(Color.black);
-        for (int y = y1 + 20; y <= height + 20; y += 20) {
+        for (int y = y1 + 40; y <= height + 80; y += 40) {
             g.drawLine(x1, y, x1 + width, y);
         }
 
         int x;
         int idkAnymore = 0;
-        int idkAnymore1 = 20;
+        int idkAnymore1 = 40;
 
-        for (int i = y1; i < height; i += 80) {
-            for (x = x1; x <= width; x += 100) {
+        for (int i = y1; i < height + 80; i += 80) {
+            for (x = x1; x <= width; x += 40) {
 
                 g.drawLine(x, y1 + idkAnymore, x, y1 + idkAnymore1);
 
@@ -114,7 +127,7 @@ public class Opdracht1303 extends Applet {
             idkAnymore += 40;
             idkAnymore1 += 40;
 
-            for (x = x1 + 50; x <= width; x += 60) {
+            for (x = x1 + 80; x <= width; x += 40) {
 
                 g.drawLine(x, y1 + idkAnymore, x, y1 + idkAnymore1);
 
@@ -125,5 +138,6 @@ public class Opdracht1303 extends Applet {
         g.setColor(Color.black);
         g.drawRect(x1, y1, width, height);
 
+        g.setColor(Color.white);
     }
 }

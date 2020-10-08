@@ -8,11 +8,11 @@ import java.awt.event.ActionListener;
 public class Opdracht1003 extends Applet {
     TextField tekstvak;
     Label label;
-    String premaandnumb;
+    String premaandnumb = "";
     int maandnumb;
-    String maandnaam;
+    String maandnaam = "";
     int maanddagen;
-    String error1;
+    String error1 = "";
 
     public void init() {
         setSize(450, 150);

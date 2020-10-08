@@ -6,7 +6,7 @@ import java.awt.*;
 public class Opdracht0601 extends Applet {
     int maingraphwidth = 300;
 
-    double money = 113;
+    double money = 120;
     int people = 4;
     String[] peoplenames = new String[4];
     double endmoney1;

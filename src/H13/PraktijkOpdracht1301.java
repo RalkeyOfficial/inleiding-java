@@ -11,7 +11,7 @@ public class PraktijkOpdracht1301 extends Applet {
     }
 
     public void paint(Graphics g) {
-        TekenBoom(g, 10, 10, 100);
+        TekenBoom(g, 10, 10, 200);
     }
 
     void TekenBoom(Graphics g, int x, int y, int size) {
