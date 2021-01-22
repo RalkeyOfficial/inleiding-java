@@ -7,11 +7,13 @@ public class Opdracht1302 extends Applet {
 
 
     public void init() {
-
+        setSize(800, 700);
+        setBackground(Color.black);
     }
 
     public void paint(Graphics g) {
-        tekenMuur(g, 20,20,500,400);
+        tekenMuur(g, 20,20,400,200);
+
     }
 
     void tekenMuur(Graphics g, int x1, int y1, int width, int height) {
