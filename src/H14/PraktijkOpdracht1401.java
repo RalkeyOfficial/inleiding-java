@@ -9,9 +9,7 @@ import java.util.Random;
 public class PraktijkOpdracht1401 extends Applet {
 
     //game variables
-    int deck = 23;
-
-
+    private static final int deck = 23;
 
     TextField text;
     Label label;
@@ -21,7 +19,7 @@ public class PraktijkOpdracht1401 extends Applet {
     int fullDeck = deck;
 
     public void init() {
-        text = new TextField("", 5);
+        text = new TextField("", 4);
         label = new Label("Enter a number (1, 2 or 3):");
         reset = new Button("Reset game");
 
